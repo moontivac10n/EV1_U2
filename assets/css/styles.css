@@ -1,0 +1,56 @@
+body {
+    font-family: "Comic Sans MS";
+}
+
+#validar_formulario {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#barra_buscar {
+    margin-right: 2%;
+    margin-top: 5%;
+}
+
+#buscar_carrera {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 65%;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+#boton_enviar {
+    width: 91%;
+    background-color: rgb(0, 17, 255);
+    color: #fff;
+    cursor: pointer;
+}
+
+.parrafo_centrado {
+    text-align: center;
+}
+
+.titulo_formulario {
+    text-align: center;
+}
+
+.form-group {
+    padding: 5%;
+}
+
+.navbar-brand {
+    margin-left: 2%;
+}
+
+.negrita::placeholder {
+    font-weight: bold;
+    width: 100%;
+}

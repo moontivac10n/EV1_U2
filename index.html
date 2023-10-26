@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img src="./assets/img/logo_cft_estatal.jpeg" alt="logo_cft_estatal" width="100" height="50">
+  <a class="navbar-brand" href="#">Inicio</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Admisión <span class="sr-only"></span></a>
+      </li>
+      <li class="nav-item">
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Carreras
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Contactanos</a>
+      </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0 ml-auto" id="buscar_carrera">
+      <input class="form-control mr-sm-2" id="barra_buscar" type="text" placeholder="Busca tu Carrera"
+        aria-label="Busca tu Carrera">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </div>
+  </div>
+</nav>
+
+<img src="./assets/img/portada.jpeg" alt="portada" width="100%" height="500">
+<p class="parrafo_centrado">Si tienes dudas. Usa nuestro formulario de contaco para realizar las preguntas que
+  necesites. Recuerda que estamos para ayudarte y ofrecerte una educación de calidad.</p>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3 class="text-center">Formulario</h3>
+                    <form class="requires-validation"
+
+                        <div class="col-md-12">
+                           <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                           <div class="valid-feedback">El Nombre es valido</div>
+                           <div class="invalid-feedback">Debe ingresar un dato correcto</div>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellido" required>
+                            <div class="valid-feedback">El Apellido es valido</div>
+                            <div class="invalid-feedback">Debe ingresar un dato correcto</div>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Teléfono" required>
+                             <div class="valid-feedback">El Telefono es valido</div>
+                             <div class="invalid-feedback">Debe ingresar un dato correcto</div>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                          <input class="form-control" type="text" name="carrera" id="carrera" placeholder="Carrera" required>
+                           <div class="valid-feedback">La Carrera es valida</div>
+                           <div class="invalid-feedback">Debe ingresar un dato correcto</div>
+                        </div>
+                        <br>
+                        <div class="col-md-12">
+                          <input class="form-control" type="text" name="edad" id="edad" placeholder="Edad" required>
+                          <div class="valid-feedback">La Edad es valida</div>
+                          <div class="invalid-feedback">Debe ingresar un dato correcto</div>
+                        </div>
+                        <br>
+                        <div class="form-floating">
+                          <textarea class="form-control" placeholder="Leave a comment here" id="mensaje"></textarea>
+                          <label for="floatingTextarea">Mensaje</label>
+                          <div class="valid-feedback">El mensaje es valido</div>
+                          <div class="invalid-feedback">Debe ingresar un mensaje correcto</div>
+                         </div>
+                        <br>
+                        <div class="col-md-12">
+                          <button id="submit" type="submit" class="btn btn-primary form-control">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script src="./assets/js/bootstrap.bundle.min.js"></script>
+<script src="./assets/js/formulario_nombre_apellido.js"></script>
+</body>
+</html>
