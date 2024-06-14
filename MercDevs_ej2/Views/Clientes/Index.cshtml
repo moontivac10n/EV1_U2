@@ -1,0 +1,70 @@
+﻿@model IEnumerable<MercDevs_ej2.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index Clientes</h1>
+
+<p>
+    <a asp-action="Create"><button type="button" class="btn btn-success">Crear Cliente</button></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Correo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => cliente.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => cliente.Apellido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => cliente.Correo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => cliente.Telefono)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => cliente.Direccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => cliente.Estado)
+                </td>
+                <td>
+                    <!-- Botón "Recepción de Equipo" -->
+                    <a asp-controller="Recepcionequipoes" asp-action="EquiposRecepcionados" asp-route-clienteId="@cliente.IdCliente" class="btn btn-primary">Recepción de Equipo</a>
+
+                    <!-- Otros botones de acción -->
+                    <a asp-action="Edit" asp-route-id="@cliente.IdCliente" class="btn btn-primary">Editar</a>
+                    <a asp-action="Details" asp-route-id="@cliente.IdCliente" class="btn btn-info">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@cliente.IdCliente" class="btn btn-danger">Borrar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
