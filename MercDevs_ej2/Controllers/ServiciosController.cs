@@ -97,7 +97,7 @@ namespace MercDevs_ej2.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (servicio.Nombre != null && servicio.Precio != 0)
             {
                 try
                 {

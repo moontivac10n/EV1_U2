@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MercDevs_ej2.Models;
 using System.Diagnostics;
-
 
 namespace MercDevs_ej2.Controllers
 {
@@ -155,6 +153,18 @@ namespace MercDevs_ej2.Controllers
         private bool ClienteExists(int id)
         {
             return _context.Clientes.Any(e => e.IdCliente == id);
+        }
+
+        // GET: Clientes/EquiposRecepcionados/5
+        public async Task<IActionResult> EquiposRecepcionados(int id)
+        {
+            var equiposRecepcionados = await _context.Recepcionequipos
+                .Include(r => r.IdServicioNavigation)
+                .Where(r => r.IdCliente == id)
+                .ToListAsync();
+
+            ViewData["ClienteId"] = id; // Pasar el ID del cliente a la vista
+            return View(equiposRecepcionados);
         }
     }
 }

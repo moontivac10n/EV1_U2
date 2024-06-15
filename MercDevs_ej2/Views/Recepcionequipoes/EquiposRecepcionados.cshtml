@@ -1,120 +1,39 @@
 ﻿@model IEnumerable<MercDevs_ej2.Models.Recepcionequipo>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Equipos Recepcionados";
 }
 
-<h1>Index Recepcion De equipos</h1>
-<body style="align-content:center">
-    <p>
-        <a asp-action="Create"><button type="button" class="btn btn-success ">Crear Recepcion</button></a>
-    </p>
-    <table class="table">
-        <thead td style="white-space: nowrap;">
+<h1>Equipos Recepcionados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Servicio</th>
+            <th>Fecha</th>
+            <th>Tipo PC</th>
+            <th>Marca PC</th>
+            <th>Modelo PC</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Fecha)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TipoPc)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Accesorio)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.MarcaPc)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.ModeloPc)
-                </th>
-                <th>
-                    N° Serie
-                </th>
-                <th>
-                    Cap Ram
-                </th>
-                <th>
-                    Tipo almacenamiento
-                </th>
-                <th>
-                    Cap Almacenamiento
-                </th>
-                <th>
-                    Tipo_Gpu
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Grafico)
-                </th>
-                <th>
-                    Id Cliente
-                </th>
-                <th>
-                    Id servicio
-                </th>
-                <th>Acciones</th>
+                <td>@item.IdServicioNavigation.Nombre</td>
+                <td>@item.Fecha</td>
+                <td>@item.TipoPc</td>
+                <td>@item.MarcaPc</td>
+                <td>@item.ModeloPc</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Ver Detalle</a> |
+                    <a asp-action="UpdateStatus" asp-route-id="@item.Id" class="btn btn-warning">Recepción del Equipo</a>
+                </td>
             </tr>
-        </thead>
-        <tbody style="text-align">
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td style="white-space: nowrap;">
-                        @Html.DisplayFor(modelItem => item.Fecha)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TipoPc)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Accesorio)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.MarcaPc)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ModeloPc)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nserie)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CapacidadRam)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TipoAlmacenamiento)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.CapacidadAlmacenamiento)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TipoGpu)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Grafico)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IdClienteNavigation.IdCliente)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IdServicioNavigation.IdServicio)
-                    </td>
-                    <td>
+        }
+    </tbody>
+</table>
 
-                        <div class="d-flex justify-content-around" style="gap:10px">
-                            <a asp-action="Edit" asp-route-id="@item.Id">
-                                <button type="button" class="btn btn-primary" style="width:100%">Editar</button>
-                            </a>
-
-                            <a asp-action="Details" asp-route-id="@item.Id">
-                                <button type="button" class="btn btn-info" style="width:100%">Detalles</button>
-                            </a>
-
-                            <a asp-action="Delete" asp-route-id="@item.Id">
-                                <button type="button" class="btn btn-danger" style="width:100%">Borrar</button>
-                            </a>
-                        </div>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</body>
+<a asp-controller="Clientes" asp-action="Index" class="btn btn-primary">Volver a Clientes</a>
